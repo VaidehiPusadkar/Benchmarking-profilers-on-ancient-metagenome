@@ -22,7 +22,7 @@
 ./gargammel.pl  --comp 1,0,0 -n 5000000 -l 125 -rl 125 -damage 0.022,0.36,0.0,0.0 -se -ss HS25 -o /simulation2/simulation_modern_data/ input_folder/
 
 
-##Simulation-4 - Deamination + Fragment length + Modern Human Contamination
+##Simulation-3 - Deamination + Fragment length + Modern Human Contamination
 
 ./gargammel.pl  --comp 0.19,0.8,0.01 -n 5000000 -l 40 -rl 40 -damage 0.036,0.36,0.009,0.8 -se -ss HS25 -o /simulation3/simulation_damage_high_data/ input_folder/
 
@@ -32,7 +32,7 @@
 
 ./gargammel.pl  --comp 0.99,0,0.01 -n 5000000 -l 125 -rl 125 -damage 0.022,0.36,0.0,0.0 -se -ss HS25 -o /simulation3/simulation_modern_data/ input_folder/
 
-##Simulation-3a - Deamination + Fragment length + Microbial Contamination
+##Simulation-4 - Deamination + Fragment length + Microbial Contamination
 
 ./gargammel.pl  --comp 0.19,0.8,0.01 -n 5000000 -l 40 -rl 40 -damage 0.036,0.36,0.009,0.8 -se -ss HS25 -o /simulation4/simulation_damage_high_data/ input_folder/
 
