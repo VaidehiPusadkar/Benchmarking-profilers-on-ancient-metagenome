@@ -7,6 +7,8 @@ for file in *_s.fq; do AdapterRemoval --file1 ${file} --basename files_after_ada
 #Kraken2 
 
 for input_file in *.fasta;do echo "kraken2 --db kraken_db ${input_file} --report kraken2_${input_file}_report.out --output kraken2_${input_file}.out"; done
+for file in *_report.out; do echo "ls -l | awk '{if ($4 == "G") print $0;}' $file > genus_${file}"; done
+for file in *_report.out; do echo "ls -l | awk '{if ($4 == "S") print $0;}' $file > species_${file}"; done
 
 #KrakenUniq
 
@@ -26,9 +28,12 @@ for input_file in *report.out; do bracken -d kraken_db -i ${input_file} -o brack
 conda install -c bioconda python=3.7 metaphlan
 
 for input_file in *.fasta; do echo "metaphlan ${input_file} --input_type fasta --nproc 4 --bowtie2db MetaPhIan_database_v2 > metaphlan_${input_file}"; done
+for file in metaphlan_*; do grep -E "(s__)|(^ID)" ${file} | grep -v "t__" | sed 's/^.*s__//g' > species_${file}; done
+for file in metaphlan_*; do grep -E "(g__)|(^ID)" ${file} | grep -v "s__" | sed 's/^.*g__//g' > genus_${file}.txt; done
 
 #mOTUs
 conda create -n motu-env motus
 conda activate motu-env
-for file in *.fq.truncated; do echo "motus profile -s ${input_file} -k genus > genus_motus_${input_file}.out"; done 
-for file in *.fq.truncated; do echo "motus profile -s ${input_file} > genus_motus_${input_file}.out"; done
+
+for input_file in *.fq.truncated; do echo "motus profile -s ${input_file} -k genus > genus_motus_${input_file}.out"; done 
+for input_file in *.fq.truncated; do echo "motus profile -s ${input_file} > genus_motus_${input_file}.out"; done
