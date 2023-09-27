@@ -2,8 +2,12 @@
 
 for file in *_s.fq; do AdapterRemoval --file1 ${file} --basename files_after_adaptor_removal/final_${file} --trimns --trimqualities; done
 
-# Step2: Databases of all the tools were build for all the profilers
+# Step2: Databases of all the tools were built for all the profilers
 # Step3: Commands used Running the profilers on each simulated metagenome sample
+
+## FASTA files (*input.fasta) were provided as input and relative abundance report files were generated (*_report.out). 
+## Genus and species-level relative abundance data were extracted from the report file through shell scripting. 
+## Classified and unclassified reads were obtained in classified_reads.out and unclassified_reads.out respectively.
 # Kraken2 
 
 for input_file in *.fasta;do echo "kraken2 --db kraken_db ${input_file} --report kraken2_${input_file}_report.out --output kraken2_${input_file}.out"; done
