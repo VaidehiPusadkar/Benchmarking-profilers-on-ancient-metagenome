@@ -1,3 +1,6 @@
+#
+# input folder contains three folders  called bact (containing the microbial species), cont (containing the contaminant modern human / microbial sequences), endo (containing the endogenous ancient human sequences)
+# Five replicates of each sample were generated
 ##Simulation-2a - Deamination + Fragment length
 
 ./gargammel.pl  --comp 0.99,0,0.01 -n 5000000 -l 40 -rl 40 -damage 0.036,0.36,0.009,0.8 -se -ss HS25 -o /simulation2/simulation_damage_high_data/ input_folder/
