@@ -25,3 +25,9 @@ Kaiju (version 1.8.2) represents the DNA-to-protein profiler, which compares eac
 The database of Kaiju was downloaded from https://kaiju.binf.ku.dk/server, and we further downloaded the RefSeq database (dated 02-26-2021). 
 
 mOTUs (version 2.6.1) and Metaphlan4(version 4.0.4) represent marker-based profilers, which align metagenomic reads to marker sequences unique to different microbial taxa in the database. 
+The script includes the commands for the following tasks:
+1. **Adaptor Removal for Single-End Reads**: The script provides instructions for removing adaptors from single-end reads.
+
+2. **Profiling on Simulation Reads**: Running each profiler on all the reads generated in the simulations.
+
+3. **Obtaining Species and Genus Level Relative Abundance**: lastly, calculating relative abundance at both the species and genus levels from the generated data.
